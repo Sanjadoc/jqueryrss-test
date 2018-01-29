@@ -1,0 +1,164 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font: 14px/1 'Open Sans', sans-serif;
+  color: #555;
+  background: #e5e5e5;
+  text-align: center;
+}
+
+h1 {
+  margin: 40px 0;
+  font-size: 30px;
+  font-weight: 300;
+  text-align: center;
+}
+
+div > button {
+  position: relative;
+  display: inline-block;
+  float: left;
+  margin: 10px 10px;
+}
+
+#link-2 {
+  float: right;
+}
+
+
+/* Button */
+
+.btn-3d {
+  position: relative;
+  background: orangered;
+  border: none;
+  color: white;
+  padding: 15px 24px;
+  font-style: 1.4rem;
+  -webkit-box-shadow: -6px 6px 0 hsl(16, 100%, 30%);
+  box-shadow: -6px 6px 0 hsl(16, 100%, 30%);
+  outline: none;
+}
+
+.btn-3d:hover {
+ background: hsl(16, 100%, 45%);
+}
+
+.btn-3d:active {
+  background: hsl(16, 100%, 40%);
+  top:3px;
+  left: -3px;
+  -webkit-box-shadow: -3px 3px 0 hsl(16, 100%, 30%);
+  box-shadow: -3px 3px 0 hsl(16, 100%, 30%);
+}
+
+.btn-3d::before {
+  position: absolute;
+  display: block;
+  content: "";
+  height: 0;
+  width: 0;
+
+  border: solid 6px transparent;
+  border-right: solid 6px hsl(16, 100%, 30%);
+  border-left-width: 0;
+  top:0;
+  left:-6px;
+}
+
+.btn-3d::after {
+  position: absolute;
+  display: block;
+  content: "";
+  height: 0;
+  width: 0;
+
+  border: solid 6px transparent;
+  border-top: solid 6px hsl(16, 100%, 30%);
+  border-bottom-width: 0;
+  right: 0;
+  bottom:-6px;
+}
+
+.btn-3d:active::before{
+  border: solid 3px transparent;
+  border-right: solid 3px hsl(16, 100%, 30%);
+  border-left-width: 0;
+  left: -3px;
+}
+
+.btn-3d:active::after{
+  border: solid 3px transparent;
+  border-top: solid 3px hsl(16, 100%, 30%);
+  border-bottom-width: 0;
+  bottom:-3px;
+}
+
+
+/* Gallery */
+
+.gallery {
+  width: 860px;
+  margin: 0 auto;
+  padding: 5px;
+}
+
+.gallery > div {
+  position: relative;
+  float: left;
+  padding: 5px;
+  background-color: #fff;
+}
+
+.gallery > div > img {
+  display: block;
+  width: 200px;
+  min-height: 200px;
+  transition: .1s transform;
+  transform: translateZ(0);
+}
+
+.gallery > div:hover {
+  z-index: 1;
+}
+
+.gallery > div:hover > img {
+  transform: scale(1.2,1.2);
+  transition: .3s transform;
+  border: solid 5px white;
+  cursor: pointer;
+  border-radius: 3px;
+}
+
+.clear:before, .clear:after {
+  display: table;
+  content: "";
+  line-height: 0;
+}
+
+.clear:after {
+  clear: both;
+}
+
+
+/* Simple responsive */
+
+@media only screen and (max-width: 649px) {
+  .gallery {
+    width: 480px;
+    margin: 0 auto;
+    padding: 5px;
+  }
+}
+
+@media screen and (max-width: 865px) and (min-width: 650px) {
+  .gallery {
+    width: 660px;
+    margin: 0 auto;
+    padding: 5px;
+  }
+}
